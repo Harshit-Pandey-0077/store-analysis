@@ -1,0 +1,50 @@
+Superstore data analysis in sql
+
+-- 01 Total sales by region 
+
+SELECT Region, SUM(Sales) AS TotalSales
+FROM superstore_final_dataset
+GROUP BY Region
+ORDER BY TotalSales DESC;
+
+-- 02 Top 5 sales by  state 
+
+SELECT State, SUM(Sales) AS TotalSales
+FROM superstore_final_dataset
+GROUP BY State
+ORDER BY TotalSales DESC
+LIMIT 5;
+
+-- 03 Total sales by categoryies 
+
+SELECT Category, SUM(Sales) AS TotalSales
+FROM superstore_final_dataset
+GROUP BY Category
+ORDER BY TotalSales DESC;
+
+-- 04 Total sales by sub-category 
+
+SELECT Sub_Category, SUM(Sales) AS TotalSales
+FROM superstore_final_dataset
+GROUP BY Sub_Category
+ORDER BY TotalSales DESC;
+
+-- 05 Total sales by product name 
+
+SELECT Product_Name, SUM(Sales) AS TotalSales
+FROM superstore_final_dataset
+GROUP BY Product_Name
+ORDER BY TotalSales DESC
+LIMIT 10;
+
+-- 06 Total sales by category and state 
+
+SELECT State, Category, SUM(Sales) AS TotalSales
+FROM superstore_final_dataset
+GROUP BY State, Category
+ORDER BY State, TotalSales DESC;
+
+
+
+
+
